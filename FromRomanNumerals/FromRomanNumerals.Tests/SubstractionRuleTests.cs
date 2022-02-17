@@ -9,6 +9,18 @@ namespace FromRomanNumerals.Tests
         {
         }
 
+
+        [Test]
+        public void _1_1_before_5()
+        {
+            var numbers = new[] { 1, 1, 5 };
+
+            var signedNumbers = RomanToNumberConverter.ApplySubstractionRule(numbers);
+
+            Assert.That(signedNumbers, Is.EquivalentTo(new[] { -1, -1, 5 }));
+        }
+
+
         [Test]
         public void _1_before_5()
         {

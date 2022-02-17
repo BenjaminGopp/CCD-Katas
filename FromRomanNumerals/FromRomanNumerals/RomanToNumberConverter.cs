@@ -1,7 +1,16 @@
 ﻿internal static class RomanToNumberConverter
 {
 
-    static Dictionary<char,int> romanToNumber = new Dictionary<char,int>();
+    static Dictionary<char, int> romanToNumber = new Dictionary<char, int>()
+    {
+        { 'I', 1 },
+        { 'V', 5 },
+        { 'X', 10 },
+        { 'L', 50 },
+        { 'C', 100 },
+        { 'D', 500 },
+        { 'M', 1000 },
+    };
 
     internal static int[] MapRomanToNumbers(string roman)
     {
@@ -19,7 +28,7 @@
 
         var signedNumbers = new int[numbers.Length];
 
-        for (int i = 0; i < numbers.Length-1; i++)
+        for (int i = 0; i < numbers.Length - 1; i++)
         {
             if (numbers[i] < numbers[i+1])
             {
