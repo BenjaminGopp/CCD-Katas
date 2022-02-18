@@ -2,7 +2,7 @@
 {
     public class RomanTestData
     {
-        public string Roman { get; internal set; }
-        public int Number { get; internal set; }
+        public string Roman { get; set; }
+        public int Number { get; set; }
     }
 }

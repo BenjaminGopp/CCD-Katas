@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace FromRomanNumerals.Tests
 {
-    public class SubstractionRuleTests
+    public class RomanToNumber_SubstractionRuleTests
     {
         [SetUp]
         public void Setup()

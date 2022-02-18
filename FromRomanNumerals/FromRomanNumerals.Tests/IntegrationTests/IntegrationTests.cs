@@ -18,12 +18,23 @@ namespace FromRomanNumerals.Tests
 
         [Test]
         [TestCaseSource("TestData")]
-        public void IntegrationTest(RomanTestData data)
+        public void RomanToNumber_IntegrationTest(RomanTestData data)
         {
             var interactors = new Interactors();
             var number = interactors.ConvertRomanToNumber(data.Roman);
 
             Assert.That(number, Is.EqualTo(data.Number));
+        }
+
+
+        [Test]
+        [TestCaseSource("TestData")]
+        public void NumberToRoman_IntegrationTest(RomanTestData data)
+        {
+            var interactors = new Interactors();
+            var roman = interactors.ConvertNumberToRoman(data.Number);
+
+            Assert.That(roman, Is.EqualTo(data.Roman));
         }
 
         public static IEnumerable<RomanTestData> TestData()

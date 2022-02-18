@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿using FromRomanNumerals;
 
 internal class Interactors
 {
@@ -10,8 +9,14 @@ internal class Interactors
         {
             return RomanToNumberConverter.ConvertRomanToNumber(roman);
         }
-        else {
+        else
+        {
             return 0;
         }
+    }
+
+    internal string ConvertNumberToRoman(int number)
+    {
+        return NumberToRomanConverter.ConvertNumberToRoman(number);
     }
 }
