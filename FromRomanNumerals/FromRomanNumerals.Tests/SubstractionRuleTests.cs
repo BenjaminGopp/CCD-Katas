@@ -11,17 +11,6 @@ namespace FromRomanNumerals.Tests
 
 
         [Test]
-        public void _1_1_before_5()
-        {
-            var numbers = new[] { 1, 1, 5 };
-
-            var signedNumbers = RomanToNumberConverter.ApplySubstractionRule(numbers);
-
-            Assert.That(signedNumbers, Is.EquivalentTo(new[] { -1, -1, 5 }));
-        }
-
-
-        [Test]
         public void _1_before_5()
         {
             var numbers = new[] { 1, 5 };
@@ -85,5 +74,35 @@ namespace FromRomanNumerals.Tests
         }
 
 
+        [Test]
+        public void _5_before_1000()
+        {
+            var numbers = new[] { 5, 1000 };
+
+            var signedNumbers = RomanToNumberConverter.ApplySubstractionRule(numbers);
+
+            Assert.That(signedNumbers, Is.EquivalentTo(new[] { -5, 1000 }));
+        }
+
+        [Test]
+        public void _10_before_1000()
+        {
+            var numbers = new[] { 10, 1000 };
+
+            var signedNumbers = RomanToNumberConverter.ApplySubstractionRule(numbers);
+
+            Assert.That(signedNumbers, Is.EquivalentTo(new[] { -10, 1000 }));
+        }
+
+
+        [Test]
+        public void _50_before_1000()
+        {
+            var numbers = new[] { 1, 1000 };
+
+            var signedNumbers = RomanToNumberConverter.ApplySubstractionRule(numbers);
+
+            Assert.That(signedNumbers, Is.EquivalentTo(new[] { -1, 1000 }));
+        }
     }
 }

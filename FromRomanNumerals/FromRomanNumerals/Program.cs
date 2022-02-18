@@ -4,14 +4,27 @@ var interactors = new Interactors();
 
 while (true)
 {
-    Console.WriteLine("Input Roman");
+    Console.Write("Input Roman:");
     var roman = Console.ReadLine();
+
+    if (String.IsNullOrEmpty(roman))
+        continue;
+
     if (roman.FirstOrDefault() == 'e')
     {
         break;
     }
 
     var digit = interactors.ConvertRomanToNumber(roman);
-    Console.WriteLine(digit);
+
+    if (digit == 0)
+    {
+        Console.WriteLine($"Invalid roman: {roman}");
+    }
+    else
+    {
+        Console.WriteLine(digit);
+    }
+
 
 }
